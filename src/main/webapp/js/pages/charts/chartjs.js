@@ -1,7 +1,7 @@
 $(function () {
-    new Chart(document.getElementById("line_chart").getContext("2d"), getChartJs('line'));
-    new Chart(document.getElementById("bar_chart").getContext("2d"), getChartJs('bar'));
-    new Chart(document.getElementById("radar_chart").getContext("2d"), getChartJs('radar'));
+    // new Chart(document.getElementById("line_chart").getContext("2d"), getChartJs('line'));
+    // new Chart(document.getElementById("bar_chart").getContext("2d"), getChartJs('bar'));
+    // new Chart(document.getElementById("radar_chart").getContext("2d"), getChartJs('radar'));
     new Chart(document.getElementById("pie_chart").getContext("2d"), getChartJs('pie'));
 });
 
@@ -92,25 +92,61 @@ function getChartJs(type) {
             type: 'pie',
             data: {
                 datasets: [{
-                    data: [225, 50, 100, 40],
+                    // data: [120, 50, 100, 40,30,70,20],
+
+                    data: [120, 50, 100, 40,30,70,20],
                     backgroundColor: [
-                        "rgb(233, 30, 99)",
-                        "rgb(255, 193, 7)",
-                        "rgb(0, 188, 212)",
-                        "rgb(139, 195, 74)"
+                        "rgb(58,206,58)",
+                        "rgb(78,211,78)",
+                        "rgb(99,216,99)",
+                        "rgb(119,221,119)",
+                        "rgb(139,226,139)",
+                        "rgb(160,231,160)",
+                        "rgb(180,236,180)"
                     ],
                 }],
                 labels: [
-                    "Pink",
-                    "Amber",
-                    "Cyan",
-                    "Light Green"
+                    // [
+                     "กรุงเทพและปริมณฑล",
+                    "ภาคกลาง",
+                    "ภาคเหนือ",
+                    "ภาคใต้",
+                    "ภาคตะวันออก",
+                    "ภาคตะออกเฉียงเหนือ",
+                    "ภาคตะวันตก",
+                    // ],
+                    // {
+                    // render:'labels'
+                    // }
                 ]
             },
             options: {
                 responsive: true,
-                legend: false
-            }
+                legend: {
+                    display:true,
+                    labels: {
+                        fontColor: 'rgb(0,0,0)'
+                        // ,render: 'label'
+                    },
+                    position:'bottom',
+
+                },
+
+                plugins: {
+                    labels: {
+                        render: 'percentage',
+                        fontColor: ['green', 'white', 'red'],
+                        precision: 2
+                    }
+                },
+                // title: {
+                //     display: true,
+                //     text: 'Chart แสดงรายได้แยกตามภาค',
+                //     fontSize:30,
+                //     fontColor:'rgb(0,0,0)',
+                // },
+
+            },
         }
     }
     return config;

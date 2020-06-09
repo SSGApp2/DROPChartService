@@ -1,0 +1,70 @@
+<div xmlns:spring="http://www.springframework.org/tags"
+     xmlns:form="http://www.springframework.org/tags/form"
+     xmlns:c="http://java.sun.com/jsp/jstl/core"
+     xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:tiles="http://tiles.apache.org/tags-tiles"
+     version="2.0">
+
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <!--<div class="card">-->
+        <!--<div class="header">-->
+            <!--<h2>PIE CHART</h2>-->
+            <!--<ul class="header-dropdown m-r&#45;&#45;5">-->
+                <!--<li class="dropdown">-->
+                    <!--<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">-->
+                        <!--<i class="material-icons">more_vert</i>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu pull-right">-->
+                        <!--<li><a href="javascript:void(0);">Action</a></li>-->
+                        <!--<li><a href="javascript:void(0);">Another action</a></li>-->
+                        <!--<li><a href="javascript:void(0);">Something else here</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <div class="body">
+            <canvas id="pie_chart" height="300"></canvas>
+        </div>
+    <!--</div>-->
+</div>
+
+
+    <!-- Jquery Core Js -->
+    <!--<script src="../../plugins/jquery/jquery.min.js"></script>-->
+
+    <!-- Bootstrap Core Js -->
+    <!--<script src="../../plugins/bootstrap/js/bootstrap.js"></script>-->
+
+    <!-- Select Plugin Js -->
+    <!--<script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>-->
+
+    <!-- Slimscroll Plugin Js -->
+    <!--<script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>-->
+
+    <!-- Waves Effect Plugin Js -->
+    <!--<script src="../../plugins/node-waves/waves.js"></script>-->
+
+    <!-- Chart Plugins Js -->
+
+    <spring:url value="/resources/plugins/chartjs/Chart.bundle.js" var="chart_bundle"/>
+    <script src="${chart_bundle}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <spring:url value="/resources/js/admin.js" var="admin"/>
+    <script src="${admin}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <spring:url value="/resources/js/pages/charts/Charts.min.js" var="chart_min"/>
+    <script src="${chart_min}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <spring:url value="/resources/js/pages/charts/chartjs-plugin-labels.js" var="chartjs_plugin_labels"/>
+    <script src="${chartjs_plugin_labels}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <spring:url value="/resources/js/pages/charts/chartjs.js" var="chartjs"/>
+    <script src="${chartjs}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <!--<script src="../../js/pages/charts/chartjs.js"></script>-->
+    <!--<spring:url value="/resources/js/demo.js" var="demo"/>-->
+    <!--<script src="${demo}" type="text/javascript">&lt;!&ndash; required for FF3 and Opera &ndash;&gt;</script>-->
+
+    <!-- Demo Js -->
+    <!--<script src="../../js/demo.js"></script>-->
+
+</div>

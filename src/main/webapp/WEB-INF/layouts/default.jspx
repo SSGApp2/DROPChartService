@@ -37,8 +37,8 @@
     <util:load-scripts />
 </head>
 <body class="theme-red">
-<tiles:insertAttribute name="header" ignore="true"/>
-<tiles:insertAttribute name="menu" ignore="true"/>
+<!--<tiles:insertAttribute name="header" ignore="true"/>-->
+<!--<tiles:insertAttribute name="menu" ignore="true"/>-->
 <section class="content">
     <!--<div class="container-fluid">-->
         <tiles:insertAttribute name="body" ignore="true"/>
