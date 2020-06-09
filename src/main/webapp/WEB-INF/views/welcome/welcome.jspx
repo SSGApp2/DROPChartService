@@ -11,34 +11,22 @@
             <h2>Softsquare</h2>
         </div>
         <!-- Basic Card -->
-        <div class="row clearfix">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="card">
-                    <div class="header">
-                        <h2>
-                            HRMS ESS <small>ระบบสอบถามข้อมูลการลา...</small>
-                        </h2>
-                        <ul class="header-dropdown m-r-0">
-                            <li>
-                                <a href="javascript:void(0);">
-                                    <i class="material-icons">info_outline</i>
-                                </a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="javascript:void(0);">Fav</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="body" >
-                        <a  href="http://hrms.softsquaregroup.com:8998/HRMS_ESS/" target="_blank">HRMS ESS</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <canvas id="myChart"> <jsp:text/></canvas>
     </div>
+
+
+
+    <spring:url value="/resources/plugins/chartjs/Chart.min.js" var="chart_js"/>
+    <script src="${chart_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js">&lt;!&ndash; required for FF3 and Opera &ndash;&gt;</script>-->
+
+    <spring:url value="/resources/plugins/chartjs/chartjs-plugin-labels.js" var="chartjs_plugin_labels_js"/>
+    <script src="${chartjs_plugin_labels_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+
+    <spring:url value="/resources/js/pages/charts/chartJsDemo1.js" var="chartjsdemo1_js"/>
+    <script src="${chartjsdemo1_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+
 </div>
