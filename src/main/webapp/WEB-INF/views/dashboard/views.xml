@@ -8,4 +8,13 @@
     <definition name="dashboardPerformance" extends="default">
         <put-attribute name="body" value="/WEB-INF/views/dashboard/dashboardPerformance.jspx" />
     </definition>
+    <definition name="dashboardPerformanceBox" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/dashboard/dashboardPerformanceBox.jspx" />
+    </definition>
+    <definition name="dashboardPerformanceBoxTime" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/dashboard/dashboardPerformanceBoxTime.jspx" />
+    </definition>
+    <definition name="dashboardPerformanceBoxUse" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/dashboard/dashboardPerformanceBoxUse.jspx" />
+    </definition>
 </tiles-definitions>

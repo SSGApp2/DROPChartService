@@ -49,6 +49,16 @@
 
     <!-- Load JS -->
     <!-- Jquery Core Js -->
+
+    <spring:url value="/resources/plugins/chartjs/Chart.bundle.js" var="chart_bundle"/>
+    <script src="${chart_bundle}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/js/admin.js" var="admin"/>
+    <script src="${admin}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/plugins/chartjs/Chart.min.js" var="chart_js"/>
+    <script src="${chart_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/plugins/chartjs/chartjs-plugin-labels.js" var="chartjs_plugin_labels_js"/>
+    <script src="${chartjs_plugin_labels_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
     <spring:url value="/resources/plugins/jquery/jquery.min.js" var="jquery_min_js"/>
     <script src="${jquery_min_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
     <!-- Bootstrap Core Js -->
