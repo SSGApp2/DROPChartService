@@ -17,4 +17,7 @@
     <definition name="dashboardPerformanceBoxUse" extends="default">
         <put-attribute name="body" value="/WEB-INF/views/dashboard/dashboardPerformanceBoxUse.jspx" />
     </definition>
+    <definition name="dashboardPerformanceDailySale" extends="default">
+        <put-attribute name="body" value="/WEB-INF/views/dashboard/dashboardPerformanceDailySale.jspx" />
+    </definition>
 </tiles-definitions>
