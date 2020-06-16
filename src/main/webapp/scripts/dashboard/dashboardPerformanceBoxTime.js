@@ -40,14 +40,14 @@ function  renderChart1(dataJson) {
     // var dataTest = [];
     var dataTest = [2.00,1.90,1.80, 1.50, 1.30, 1.20, 1.10,1.00,0.85,0.70];
     // var title = ["รายได้แยกตามภาค"];
-    var title=["กราฟแสดงค่าเฉลี่ยน้ำหนักต่อพัสดุ 1 ชิ้น"];
+    var title=["กราฟแสดงค่าเฉลี่ยน้ำหนักพัสดุรวมรายตู้ ณ เวลาใดเวลาหนึ่ง"];
     var labelX = "น้ำหนักพัสดุ";
     var labelY = "จำนวนตู้";
     // $.each(dataJson, function (k, v) {
     //     label.push(v.areaName);
     //     dataTest.push(v.sum);
     // });
-    new Chart(document.getElementById("horizontal_chartBox").getContext("2d"),
+    new Chart(document.getElementById("horizontal_chartTime").getContext("2d"),
         getChartJsHorizontalBar(label, dataTest, title, bgcolorPerformanceBox,bordercolorPerformanceBox,labelX,labelY,hoverbgPerformanceBox,hoverborderPerformanceBox));
 }
 function  renderChart2(dataJson) {
@@ -72,14 +72,14 @@ function  renderChart2(dataJson) {
         }
     ];
     // var title = ["รายได้แยกตามภาค"];
-    var title=["กราฟแสดงค่าเฉลี่ยของปริมาตรต่อพัสดุ 1 ชิ้น"];
+    var title=["กราฟแสดงปริมาตรเฉลี่ยรวมรายตู้ ณ เวลาใดเวลาหนึ่ง"];
     var labelX = "จำนวนตู้";
     var labelY = "ปริมาตรพัสดุ";
     // $.each(dataJson, function (k, v) {
     //     label.push(v.areaName);
     //     dataTest.push(v.sum);
     // });
-        new Chart(document.getElementById("bar_chartBox1").getContext("2d"),
+        new Chart(document.getElementById("bar_chartTime1").getContext("2d"),
         getChartJsBar(label,dataTest,title,labelX,labelY));
 }
 function  renderChart3(dataJson) {
@@ -88,20 +88,20 @@ function  renderChart3(dataJson) {
     // var dataTest = [];
     var dataTest = [
         {
-            label: "รายได้",
+            label: "สินค้ารายตู้",
             data:  [15000, 10000, 5000, 7000, 2000,3000, 4000,11000,12000,13000],
             backgroundColor: "#fa9200"
         },
     ];
     // var title = ["รายได้แยกตามภาค"];
-    var title=["กราฟแสดงรายได้รวมรายตู้"];
+    var title=["กราฟแสดงปริมาณสินค้าเฉลี่ยรายตู้ ณ เวลาใดเวลาหนึ่ง"];
     var labelX = "จำนวนตู้";
-    var labelY = "รายได้รวม";
+    var labelY = "จำนวนสินค้า";
     // $.each(dataJson, function (k, v) {
     //     label.push(v.areaName);
     //     dataTest.push(v.sum);
     // });
-        new Chart(document.getElementById("bar_chartBox2").getContext("2d"),
+        new Chart(document.getElementById("bar_chartTime2").getContext("2d"),
         getChartJsBar(label,dataTest,title,labelX,labelY));
 }
 

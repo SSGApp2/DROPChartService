@@ -49,7 +49,8 @@
 
     <!-- Load JS -->
     <!-- Jquery Core Js -->
-
+    <spring:url value="/resources/scripts/util/DateUtils.js" var="date_utils"/>
+    <script src="${date_utils}" type="text/javascript"><!-- required for FF3 and Opera --></script>
     <spring:url value="/resources/plugins/chartjs/Chart.bundle.js" var="chart_bundle"/>
     <script src="${chart_bundle}" type="text/javascript"><!-- required for FF3 and Opera --></script>
     <spring:url value="/resources/js/admin.js" var="admin"/>
@@ -91,6 +92,10 @@
     <spring:url value="/resources/plugins/jquery-steps/jquery.steps.js" var="jquery_steps_js"/>
     <script src="${jquery_steps_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
+    <spring:url value="/resources/scripts/util/datepicker/bootstrap-datepicker-th.js" var="bootstrap_datepicker_th"/>
+    <script src="${bootstrap_datepicker_th}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+
     <!-- Jquery Nestable -->
     <!--<spring:url value="/resources/plugins/nestable/jquery.nestable.js" var="jquery_nestable_js"/>-->
     <!--<script src="${jquery_nestable_js}" type="text/javascript">&lt;!&ndash; required for FF3 and Opera &ndash;&gt;</script>-->
@@ -108,6 +113,9 @@
 
     <spring:url value="/resources/scripts/util/AjaxUtil.js" var="ajaxutil_js"/>
     <script src="${ajaxutil_js}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+    <spring:url value="/resources/scripts/util/JsonUtil.js" var="Json_util"/>
+    <script src="${Json_util}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
 
 </jsp:root>

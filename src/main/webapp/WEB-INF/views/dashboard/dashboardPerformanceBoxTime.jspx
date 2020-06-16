@@ -1,77 +1,61 @@
 <div xmlns:spring="http://www.springframework.org/tags"
      xmlns:form="http://www.springframework.org/tags/form"
      xmlns:c="http://java.sun.com/jsp/jstl/core"
-     xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:tiles="http://tiles.apache.org/tags-tiles"
+     xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util"
      version="2.0">
-    <script><![CDATA[
-    var statusChart = '${statusChart}';
-        ]]>
-    </script>
+    <style>
+        .colorChart{
+            border: 1px solid;border-color: #A9A9A9;
+            background:white;
+            border-radius:5px;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
 
     <div style="margin-top: 10px">
-        <div class="input-daterange " id="bs_datepicker_range_container">
-            <div class="form-line col-xs-12 col-sm-5">
-                <input type="text" class="form-control" placeholder="Date start..."/>
-            </div>
-            <div class="col-sm-2">
-                <span class="input-group-addon">to</span>
-            </div>
-            <div class="form-line col-xs-12 col-sm-5">
-                <input type="text" class="form-control" placeholder="Date end..."/>
-            </div>
+        <div class="col-xs-12 col-sm-6">
+            <!--<div class="input-group mb-2 mr-sm-2">-->
+
+            <label class="text-navy" style="margin-top: 10px; ">ตั้งแต่วันที่ : </label><br/>
+            <util:datepickernobutton id="dateFromPerfBoxTime" placeholder="From"/>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <label class="text-navy" style="margin-top: 10px;">ถึงวันที่ : </label><br/>
+            <util:datepickernobutton id="dateToPerfBoxTime" placeholder="To"/>
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-6">
-        <canvas id="horizontal_chartTime" height="300" style="border:solid;margin-top: 10px;border-color: #8a8a8a;background:white;margin-top: 15px;border-radius:5px;"></canvas>
+        <canvas id="horizontal_chartTime" height="300" class="colorChart"></canvas>
     </div>
     <div class="col-xs-12 col-sm-6">
-        <canvas id="bar_chartTime1" height="300" style="border:solid;border-color: #8a8a8a;background:white;border-radius:5px;margin-top: 15px;"></canvas>
+        <canvas id="bar_chartTime1" height="300" class="colorChart"></canvas>
     </div>
 
     <div class="col-xs-12 col-sm-6">
-        <canvas id="bar_chartTime2" height="300" style="border:solid;border-color: #8a8a8a;background:white;border-radius:5px;margin-top: 15px;"></canvas>
+        <canvas id="bar_chartTime2" height="300" class="colorChart"></canvas>
     </div>
 
-
-    <!-- Jquery Core Js -->
-    <!--<script src="../../plugins/jquery/jquery.min.js"></script>-->
-
-    <!-- Bootstrap Core Js -->
-    <!--<script src="../../plugins/bootstrap/js/bootstrap.js"></script>-->
-
-    <!-- Select Plugin Js -->
-    <!--<script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>-->
-
-    <!-- Slimscroll Plugin Js -->
-    <!--<script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>-->
-
-    <!-- Waves Effect Plugin Js -->
-    <!--<script src="../../plugins/node-waves/waves.js"></script>-->
 
     <!-- Chart Plugins Js -->
+    <spring:url value="/resources/scripts/util/datepicker/bootstrap-datepicker-th.js" var="bootstrap_datepicker_th"/>
+    <script src="${bootstrap_datepicker_th}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
     <spring:url value="/resources/plugins/autosize/autosize.js" var="autosize"/>
     <script src="${autosize}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
     <spring:url value="/resources/plugins/momentjs/moment.js" var="moment"/>
     <script src="${moment}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
-    <spring:url value="/resources/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js" var="bootstrap_material_datetimepicker"/>
-    <script src="${bootstrap_material_datetimepicker}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/scripts/chartCustom/ChartHorizontalBar.js" var="chart_horizontal_bar"/>
+    <script src="${chart_horizontal_bar}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
-    <spring:url value="/resources/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" var="bootstrap_datepicker"/>
-    <script src="${bootstrap_datepicker}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/scripts/chartCustom/chartBar.js" var="chart_bar"/>
+    <script src="${chart_bar}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
-
-
-
-    <spring:url value="/resources/js/pages/charts/chartjs.js" var="chartjs"/>
-    <script src="${chartjs}" type="text/javascript"><!-- required for FF3 and Opera --></script>
-
-
-
-    <spring:url value="/resources/js/pages/forms/basic-form-elements.js" var="basic_form_elements"/>
-    <script src="${basic_form_elements}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/scripts/dashboard/dashboardPerformanceBoxTime.js" var="dashboardPerformanceBoxTime"/>
+    <script src="${dashboardPerformanceBoxTime}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
 
 

@@ -12,28 +12,24 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
+
     <div style="margin-top: 10px">
         <div class="col-xs-12 col-sm-6">
             <!--<div class="input-group mb-2 mr-sm-2">-->
 
-                <label class="text-navy" style="margin-top: 10px; ">ตั้งแต่วันที่ : </label><br/>
-                <util:datepickernobutton id="dateFrom" placeholder="From"/>
+            <label class="text-navy" style="margin-top: 10px; ">ตั้งแต่วันที่ : </label><br/>
+            <util:datepickernobutton id="dateFromPerfDailySale" placeholder="From"/>
         </div>
         <div class="col-xs-12 col-sm-6">
             <label class="text-navy" style="margin-top: 10px;">ถึงวันที่ : </label><br/>
-            <util:datepickernobutton id="dateTo" placeholder="To"/>
+            <util:datepickernobutton id="dateToPerfDailySale" placeholder="To"/>
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-6">
-        <canvas id="pie_chart1" height="300" class="colorChart"></canvas>
+        <canvas id="line_chart" height="300" class="colorChart"></canvas>
     </div>
-    <div class="col-xs-12 col-sm-6">
-        <canvas id="pie_chart2" height="300" class="colorChart"></canvas>
-    </div>
-    <div class="col-xs-12 col-sm-6">
-        <canvas id="pie_chart3" height="300" class="colorChart"></canvas>
-    </div>
+
 
     <!-- Chart Plugins Js -->
     <spring:url value="/resources/scripts/util/datepicker/bootstrap-datepicker-th.js" var="bootstrap_datepicker_th"/>
@@ -45,11 +41,13 @@
     <spring:url value="/resources/plugins/momentjs/moment.js" var="moment"/>
     <script src="${moment}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
-    <spring:url value="/resources/scripts/chartCustom/chartPie.js" var="chart_pie"/>
-    <script src="${chart_pie}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/scripts/chartCustom/chartLine.js" var="chart_line"/>
+    <script src="${chart_line}" type="text/javascript"><!-- required for FF3 and Opera --></script>
 
-    <spring:url value="/resources/scripts/dashboard/dashboardPerformance.js" var="dashboardPerformance"/>
-    <script src="${dashboardPerformance}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+    <spring:url value="/resources/scripts/dashboard/dashboardPerformanceDailySale.js" var="dashboardPerformanceDailySale"/>
+    <script src="${dashboardPerformanceDailySale}" type="text/javascript"><!-- required for FF3 and Opera --></script>
+
+
 
 
 </div>

@@ -3,7 +3,9 @@ var bgcolorPerformanceBox = "rgba(255,99,132,0.2)";
 var bordercolorPerformanceBox= "rgba(255,99,132,1)";
 var hoverbgPerformanceBox =  "rgba(255,99,132,0.5)";
 var hoverborderPerformanceBox = "rgba(255,99,132,1)";
-
+var myChart1;
+var myChart2;
+var myChart3;
 jQuery(document).ready(function () {
     findAll();
 
@@ -38,71 +40,50 @@ function  renderChart1(dataJson) {
     // var label = [];
     var label = [ "ตู้ที่1", "ตู้ที่2", "ตู้ที่3", "ตู้ที่4", "ตู้ที่5", "ตู้ที่6", "ตู้ที่7","ตู้ที่8","ตู้ที่9","ตู้ที่10"];
     // var dataTest = [];
-    var dataTest = [2.00,1.90,1.80, 1.50, 1.30, 1.20, 1.10,1.00,0.85,0.70];
+    var dataTest = [200,190,180, 150, 130, 120, 110,100,85,70];
     // var title = ["รายได้แยกตามภาค"];
-    var title=["กราฟแสดงค่าเฉลี่ยน้ำหนักต่อพัสดุ 1 ชิ้น"];
+    var title=["แสดงรายการตู้ที่มีการใช้งานมาก 10 อันดับแรก"];
     var labelX = "น้ำหนักพัสดุ";
     var labelY = "จำนวนตู้";
     // $.each(dataJson, function (k, v) {
     //     label.push(v.areaName);
     //     dataTest.push(v.sum);
     // });
-    new Chart(document.getElementById("horizontal_chartBox").getContext("2d"),
+    if(myChart1){
+        myChart1.destroy();
+    }
+   myChart1 = new Chart(document.getElementById("horizontal_chartUse").getContext("2d"),
         getChartJsHorizontalBar(label, dataTest, title, bgcolorPerformanceBox,bordercolorPerformanceBox,labelX,labelY,hoverbgPerformanceBox,hoverborderPerformanceBox));
 }
 function  renderChart2(dataJson) {
     // var label = [];
-    var label = [ "ตู้ที่1", "ตู้ที่2", "ตู้ที่3", "ตู้ที่4", "ตู้ที่5", "ตู้ที่6", "ตู้ที่7","ตู้ที่8","ตู้ที่9","ตู้ที่10"];
+    var label = [ "ตู้ที่11", "ตู้ที่12", "ตู้ที่13", "ตู้ที่14", "ตู้ที่15", "ตู้ที่16", "ตู้ที่17","ตู้ที่18","ตู้ที่19","ตู้ที่20"];
     // var dataTest = [];
-    var dataTest = [
-        {
-            label: "กว้าง",
-            data:  [65, 59, 80, 81, 56, 55, 40],
-            backgroundColor: "rgb(58,206,58)"
-        },
-        {
-            label: "สูง",
-            data: [28, 48, 40, 19, 86, 27, 100],
-            backgroundColor: "rgb(99,216,99)"
-        },
-        {
-            label: "ยาว",
-            data: [12, 16, 42, 24, 84, 23, 22],
-            backgroundColor:  "rgb(160,231,160)"
-        }
-    ];
+    var dataTest = [2.00,1.90,1.80, 1.50, 1.30, 1.20, 1.10,1.00,0.85,0.70];
     // var title = ["รายได้แยกตามภาค"];
-    var title=["กราฟแสดงค่าเฉลี่ยของปริมาตรต่อพัสดุ 1 ชิ้น"];
-    var labelX = "จำนวนตู้";
-    var labelY = "ปริมาตรพัสดุ";
+    var title=["แสดงรายการตู้ที่มีการใช้งานน้อย 10 อันดับแรก"];
+    var labelX = "น้ำหนักพัสดุ";
+    var labelY = "จำนวนตู้";
     // $.each(dataJson, function (k, v) {
     //     label.push(v.areaName);
     //     dataTest.push(v.sum);
     // });
-        new Chart(document.getElementById("bar_chartBox1").getContext("2d"),
-        getChartJsBar(label,dataTest,title,labelX,labelY));
+    if(myChart2){
+        myChart2.destroy();
+    }
+  myChart2 =  new Chart(document.getElementById("horizontal_chartUse2").getContext("2d"),
+        getChartJsHorizontalBar(label, dataTest, title, bgcolorPerformanceBox,bordercolorPerformanceBox,labelX,labelY,hoverbgPerformanceBox,hoverborderPerformanceBox));
 }
 function  renderChart3(dataJson) {
-    // var label = [];
-    var label = [ "ตู้ที่1", "ตู้ที่2", "ตู้ที่3", "ตู้ที่4", "ตู้ที่5", "ตู้ที่6", "ตู้ที่7","ตู้ที่8","ตู้ที่9","ตู้ที่10"];
-    // var dataTest = [];
-    var dataTest = [
-        {
-            label: "รายได้",
-            data:  [15000, 10000, 5000, 7000, 2000,3000, 4000,11000,12000,13000],
-            backgroundColor: "#fa9200"
-        },
-    ];
-    // var title = ["รายได้แยกตามภาค"];
-    var title=["กราฟแสดงรายได้รวมรายตู้"];
+    var title=["กราฟแสดงปริมาณสินค้าเฉลี่ยรายตู้ ณ เวลาใดเวลาหนึ่ง"];
     var labelX = "จำนวนตู้";
-    var labelY = "รายได้รวม";
+    var labelY = "จำนวนสินค้า";
     // $.each(dataJson, function (k, v) {
     //     label.push(v.areaName);
     //     dataTest.push(v.sum);
     // });
-        new Chart(document.getElementById("bar_chartBox2").getContext("2d"),
-        getChartJsBar(label,dataTest,title,labelX,labelY));
+        new Chart(document.getElementById("line_chart").getContext("2d"),
+        getChartJsLine(title,labelX,labelY));
 }
 
 

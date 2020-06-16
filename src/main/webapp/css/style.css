@@ -1,5 +1,7 @@
 ﻿/* Navbar ====================================== */
 @import url(materialize.css);
+
+@import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
 .navbar {
   font-family: "Kanit", sans-serif;
   -webkit-border-radius: 0;
